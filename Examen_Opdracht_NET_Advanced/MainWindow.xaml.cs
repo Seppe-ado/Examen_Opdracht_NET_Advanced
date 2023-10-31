@@ -22,14 +22,14 @@ namespace Examen_Opdracht_NET_Advanced
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+         
         MyDbContext context= new MyDbContext();
         public MainWindow()
         {
             Initializer.DbSetInitializer(context);
             InitializeComponent();
             App.MainWindow = this;
-
+            App.context= context;
         }
     }
 }
