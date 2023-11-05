@@ -6,7 +6,88 @@
         xmlns:local="clr-namespace:Examen_Opdracht_NET_Advanced"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid x:Name="grMain">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+            
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+            
+        </Grid.ColumnDefinitions>
+
+        <Menu Grid.ColumnSpan="2">
+            <MenuItem Name="miLogin" Header="Login" Click="miLoginClick"/>
+            <MenuItem Name="miRegister" Header="Register" Click="miRegisterClick"/>
+            <MenuItem Name="miProfile" Header="Profile" Visibility="Collapsed"/>
+            <MenuItem Name="miLogoff" Header="Logoff" Click="miLogoffClick" Visibility="Collapsed"/>
+        </Menu>
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <Label FontWeight="Bold" FontSize="15">
+                Routes
+            </Label>
+            <Button Name="btAddRoute" Click="btAddRoute_Click">Add new Route</Button>
+
+            <ListBox Name="lbRoutes" SelectionChanged="lbRoutes_SelectionChanged" >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                
+                            </Grid.ColumnDefinitions>
+                                <Label  Grid.Column="0"  Content="{Binding Path=Name}"/>
+                            
+                        </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Label FontWeight="Bold" FontSize="15">
+                Details
+            </Label>
+
+            <ListBox Name="lbDetails" SelectionChanged="lbRoutes_SelectionChanged" >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0">Name</TextBlock>
+                            <TextBlock Grid.Row="0" Grid.Column="1">Completed</TextBlock>
+                            <TextBlock Grid.Row="0" Grid.Column="2">Description</TextBlock>
+                            <TextBlock Grid.Row="0" Grid.Column="3">Distance</TextBlock>
+                            <TextBlock Grid.Row="0" Grid.Column="4">Duration</TextBlock>
+                            <Label  Grid.Column="0" Grid.Row="1" Content="{Binding Path=Name}"/>
+                            <Label  Grid.Column="1" Grid.Row="1" Content="{Binding Path=Completed}"/>
+                            <Label  Grid.Column="2" Grid.Row="1" Content="{Binding Path=Description}"/>
+                            <Label  Grid.Column="3" Grid.Row="1" Content="{Binding Path=Length}"/>
+                            <Label  Grid.Column="4" Grid.Row="1" Content="{Binding Path=Duration}"/>
+
+                            <Button Grid.Column="0" Grid.Row="2" Name="btEditRoute" Click="btEditRoute_Click">Edit Route</Button>
+                            <Button Grid.Column="0" Grid.Row="3" Name="btConfirmProgres" Click="btConfirmProgres_Click">Confirm Route</Button>
+
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </StackPanel>
 
     </Grid>
 </Window>
