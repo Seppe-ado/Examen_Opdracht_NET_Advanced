@@ -73,14 +73,14 @@
                             <TextBlock Grid.Row="0" Grid.Column="2">Description</TextBlock>
                             <TextBlock Grid.Row="0" Grid.Column="3">Distance</TextBlock>
                             <TextBlock Grid.Row="0" Grid.Column="4">Duration</TextBlock>
-                            <Label  Grid.Column="0" Grid.Row="1" Content="{Binding Path=Name}"/>
+                            <Label  Name="lbNameRoute" Grid.Column="0" Grid.Row="1" Content="{Binding Path=Name}"/>
                             <Label  Grid.Column="1" Grid.Row="1" Content="{Binding Path=Completed}"/>
                             <Label  Grid.Column="2" Grid.Row="1" Content="{Binding Path=Description}"/>
                             <Label  Grid.Column="3" Grid.Row="1" Content="{Binding Path=Length}"/>
                             <Label  Grid.Column="4" Grid.Row="1" Content="{Binding Path=Duration}"/>
 
                             <Button Grid.Column="0" Grid.Row="2" Name="btEditRoute" Click="btEditRoute_Click">Edit Route</Button>
-                            <Button Grid.Column="0" Grid.Row="3" Name="btConfirmProgres" Click="btConfirmProgres_Click">Confirm Route</Button>
+                            <Button Name="btConfirmProgres" Grid.Column="0" Grid.Row="3"  Click="btConfirmProgres_Click">Confirm Route</Button>
 
                         </Grid>
                     </DataTemplate>
