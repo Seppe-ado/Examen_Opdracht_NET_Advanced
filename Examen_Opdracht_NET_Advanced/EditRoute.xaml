@@ -45,10 +45,34 @@
             <ColumnDefinition Width="300"/>
         </Grid.ColumnDefinitions>
         <TextBlock Style="{StaticResource stTextBlock}" FontSize="18" HorizontalAlignment="Center" Grid.ColumnSpan="2" Text="Update Route"/>
-        <TextBlock Style="{StaticResource stTextBlock}" Grid.Row="1" Text="Route Name"/>
-        <TextBlock Style="{StaticResource stTextBlock}" Grid.Row="2" Text="Description"/>
-        <TextBlock Style="{StaticResource stTextBlock}" Grid.Row="3" Text="Distance"/>
-        <TextBlock Style="{StaticResource stTextBlock}" Grid.Row="4" Text="Expected duration"/>
+        <TextBlock Style="{StaticResource stTextBlock}" Grid.Row="1" Text="Route Name">
+            <TextBlock.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Must be unique"/>
+                </ContextMenu>
+            </TextBlock.ContextMenu>
+        </TextBlock>
+        <TextBlock Style="{StaticResource stTextBlock}" Grid.Row="2" Text="Description">
+            <TextBlock.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="No specifications for this field"/>
+                </ContextMenu>
+            </TextBlock.ContextMenu>
+        </TextBlock>
+        <TextBlock Style="{StaticResource stTextBlock}" Grid.Row="3" Text="Distance (km)">
+            <TextBlock.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Must be an integer"/>
+                </ContextMenu>
+            </TextBlock.ContextMenu>
+        </TextBlock>
+        <TextBlock Style="{StaticResource stTextBlock}" Grid.Row="4" Text="Expected duration (hours)">
+            <TextBlock.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Must be an integer"/>
+                </ContextMenu>
+            </TextBlock.ContextMenu>
+        </TextBlock>
         <TextBox Style="{StaticResource stTextBox}" Name="tbRouteName" Grid.Row="1" Grid.Column="1"/>
         <TextBox Style="{StaticResource stTextBox}" Name="tbDescription" Grid.Row="2" Grid.Column="1"/>
         <TextBox Style="{StaticResource stTextBox}" Name="tbDistance" Grid.Row="3" Grid.Column="1"/>

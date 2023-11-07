@@ -59,7 +59,7 @@ namespace Examen_Opdracht_NET_Advanced
                     
                     App.context.Update(routed);
                     App.context.SaveChanges();
-                    
+                    App.MainWindow.refreshList();
                     this.Close();
                 }
                 if (route.Id != routed.Id)
@@ -74,7 +74,7 @@ namespace Examen_Opdracht_NET_Advanced
 
                     App.context.Update(routed);
                     App.context.SaveChanges();
-                    
+                    App.MainWindow.refreshList();
                     this.Close();
                 }
             }

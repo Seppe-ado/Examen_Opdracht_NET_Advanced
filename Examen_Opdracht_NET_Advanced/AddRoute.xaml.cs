@@ -44,7 +44,7 @@ namespace Examen_Opdracht_NET_Advanced
                     route = new Route { Name=tbRouteName.Text, Description=tbDescription.Text, Length=int.Parse(tbDistance.Text), Duration=int.Parse(tbDuration.Text) };
                     App.context.Add(route);
                     App.context.SaveChanges();
-                    
+                    App.MainWindow.refreshList();
                     this.Close();
                 }
                 tbMededeling.Text = "This Route Name already exists, enter a new Route Name";

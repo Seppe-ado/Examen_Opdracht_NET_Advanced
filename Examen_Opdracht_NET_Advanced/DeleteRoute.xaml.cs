@@ -1,7 +1,6 @@
 ﻿using Examen_Opdracht_NET_Advanced.Models;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,32 +16,28 @@ using System.Windows.Shapes;
 namespace Examen_Opdracht_NET_Advanced
 {
     /// <summary>
-    /// Interaction logic for ConfirmProgres.xaml
+    /// Interaction logic for DeleteRoute.xaml
     /// </summary>
-    public partial class ConfirmProgres : Window
+    public partial class DeleteRoute : Window
     {
         private Route routed = null;
-        public ConfirmProgres(String name)
+        public DeleteRoute(String name)
         {
             InitializeComponent();
-            
             routed = App.context.Routes.Where(r => r.Name == name).First();
         }
 
-        private void btConfirm_Click(object sender, RoutedEventArgs e)
+        private void ConfirmClick(object sender, RoutedEventArgs e)
         {
-           Progres? progres = null;
-            String commented = "";
-            if (tbComment != null)
-            {
-                commented=tbComment.Text;
-            } 
-            progres = new Progres { Completed=true, DateTime=DateTime.Now,UserId=App.LoggedInUser.Id,RouteId=routed.Id,Comment= commented };
-            App.context.Add(progres);
+            App.context.Remove(routed);
             App.context.SaveChanges();
             App.MainWindow.refreshList();
             this.Close();
+        }
 
+        private void CancelClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
