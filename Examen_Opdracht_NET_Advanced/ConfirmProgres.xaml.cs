@@ -41,6 +41,7 @@ namespace Examen_Opdracht_NET_Advanced
             App.context.Add(progres);
             App.context.SaveChanges();
             App.MainWindow.refreshList();
+            App.MainWindow.showRouteDetails();
             this.Close();
 
         }

@@ -45,6 +45,7 @@ namespace Examen_Opdracht_NET_Advanced
                 App.MainWindow.miRegister.Visibility = Visibility.Collapsed;
                 App.MainWindow.miLogin.Visibility = Visibility.Collapsed;
                 App.MainWindow.refreshList();
+                App.MainWindow.showRouteDetails();
                 this.Close();
             }
         }

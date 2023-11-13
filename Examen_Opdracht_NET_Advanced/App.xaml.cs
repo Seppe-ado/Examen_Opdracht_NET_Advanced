@@ -17,5 +17,6 @@ namespace Examen_Opdracht_NET_Advanced
         internal static MyDbContext context = null;
         internal static MainWindow MainWindow= null;
         internal static User LoggedInUser = null;
+        internal static Route AppselectedRoute = null;
     }
 }

@@ -13,27 +13,27 @@ namespace Examen_Opdracht_NET_Advanced.Data
         {
             if (!context.Users.Any())
             {
-                context.Add( new User { FirstName = "user1", LastName = "-", Email = "-", Password = "-", UserName = "user1" });
-                context.Add(new User { FirstName = "user2", LastName = "-", Email = "-", Password = "-", UserName = "user2" });
+                context.Add( new User { FirstName = "Bob", LastName = "VanVlaanderen", Email = "bob.vanV@gmail.com", Password = "test", UserName = "user1" });
+                context.Add(new User { FirstName = "Bobbette", LastName = "VanDenWalen", Email = "Bobbette.VanDW@gmail.com", Password = "test", UserName = "user2" });
                 context.SaveChanges();
             }
             if (!context.Routes.Any())
             {
-                context.Add(new Route { Name = "Route1", Description = "Route1Description", Length = 5, Duration = 65 });
-                context.Add(new Route { Name = "Route2", Description = "Route2Description", Length = 6, Duration = 80 });
-                context.Add(new Route { Name = "Route3", Description = "Route3Description", Length = 7, Duration = 90 });
-                context.Add(new Route { Name = "Route4", Description = "Route4Description", Length = 8, Duration = 110 });
-                context.Add(new Route { Name = "Route5", Description = "Route5Description", Length = 9, Duration = 130 });
+                context.Add(new Route { Name = "Sentier des Sables", Description = "Through the woods", Length = 10.6, Duration = 2.5 });
+                context.Add(new Route { Name = "Brussels Green Walk", Description = "Loop through Brussels", Length = 58.6, Duration = 15 });
+                context.Add(new Route { Name = "Red Monastry", Description = "Viscinity of Brussels", Length = 9.5, Duration = 2.5 });
+                context.Add(new Route { Name = "Sonian Forest", Description = "Trail through Sonian Forest", Length = 18.8, Duration = 5 });
+                context.Add(new Route { Name = "Culture and Arts Tour", Description = "Heart of Brussels", Length = 5, Duration = 1.5 });
                 context.SaveChanges() ;
 
             }
 
             if (!context.Progreses.Any())
             {
-                context.Add(new Progres { Comment = "1", Completed=true, DateTime= DateTime.Now, RouteId=1, UserId=1 });
-                context.Add(new Progres { Comment = "2", Completed = true, DateTime = DateTime.Now, RouteId = 2, UserId = 1 });
-                context.Add(new Progres { Comment = "3", Completed = true, DateTime = DateTime.Now, RouteId = 3, UserId = 1 });
-                context.Add(new Progres { Comment = "4", Completed = true, DateTime = DateTime.Now, RouteId = 4, UserId = 1 });
+                context.Add(new Progres { Comment = "Such nice forest with so much history!", Completed=true, DateTime= DateTime.Now, RouteId=1, UserId=1 });
+                context.Add(new Progres { Comment = "Definitely a route to split up.", Completed = true, DateTime = DateTime.Now, RouteId = 2, UserId = 1 });
+                context.Add(new Progres { Comment = "A beautiful monastry", Completed = true, DateTime = DateTime.Now, RouteId = 3, UserId = 1 });
+                context.Add(new Progres { Comment = "A stunning forest", Completed = true, DateTime = DateTime.Now, RouteId = 4, UserId = 1 });
                 context.SaveChanges();
             }
        

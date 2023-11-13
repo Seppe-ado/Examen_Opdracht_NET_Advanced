@@ -29,7 +29,7 @@ namespace Examen_Opdracht_NET_Advanced
     public partial class MainWindow : Window
     {
         List<Route> routesList = null;
-        MyDbContext context= new MyDbContext();
+        MyDbContext context = new MyDbContext();
         Route selectedRoute = null;
         List<Progres> allProgreses = null;
         private static DispatcherTimer aTimer;
@@ -38,11 +38,11 @@ namespace Examen_Opdracht_NET_Advanced
             Initializer.DbSetInitializer(context);
             InitializeComponent();
             App.MainWindow = this;
-            App.context= context;
+            App.context = context;
 
             refreshList();
-            
-            
+
+
         }
 
         public void refreshList()
@@ -53,9 +53,15 @@ namespace Examen_Opdracht_NET_Advanced
 
         private void lbRoutes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            selectedRoute = (Route)lbRoutes.SelectedItem;
+            App.AppselectedRoute = (Route)lbRoutes.SelectedItem;
+            showRouteDetails();
+        }
+        public void showRouteDetails()
+        {
+            
             try
             {
+                var selectedRoute = App.AppselectedRoute;
                 allProgreses = context.Progreses.Where(c => c.RouteId == selectedRoute.Id).ToList();
 
 
@@ -205,7 +211,8 @@ namespace Examen_Opdracht_NET_Advanced
             miLogoff.Visibility = Visibility.Collapsed;
             miProfile.Visibility = Visibility.Collapsed;
             miRegister.Visibility = Visibility.Visible;
-            App.MainWindow.refreshList();
+            refreshList();
+            showRouteDetails();
         }
 
         private void EditRouteClick(object sender, RoutedEventArgs e)
